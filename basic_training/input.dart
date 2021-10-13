@@ -6,7 +6,7 @@ main (List<String> args){
   stdout.write("Please input your age \r\n");
   age = stdin.readLineSync();
   stdout.writeln('Your age is: ${age}');
-  age!.isEmpty ? stderr.write('Age is empty') : stdout.writeln('Your age is ${age}'); //se usa el ! para
+  age!.isEmpty ? stderr.write('Age is empty') : stdout.writeln('Your age is ${age}'); //se usa el ! para 
   stdout.writeln("Where are you from? ");
   String? location = stdin.readLineSync();
   stdout.writeln('You\'re from: ${location}');
