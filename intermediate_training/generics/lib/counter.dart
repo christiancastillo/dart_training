@@ -10,7 +10,7 @@ class Counter<T extends num>{
   T elementAt(int idx) => _items.elementAt(idx);
 
   void total(){
-    num value = 0;
+    num value = 0.0;
     _items.forEach((item){
       value+=item; //value = value + item
     });

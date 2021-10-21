@@ -36,5 +36,4 @@ main(List<String> arguments) {
     Counter<int> integers = new Counter<int>();
     integers.addAll([1,2,3,4,5]);
     integers.total();
-
 }
