@@ -30,4 +30,45 @@ void main(List<String> args){
     print('Size: ${fs.size}');
   });
 
+  
+    print('-------------------- ARCHIVOS');
+
+    Directory dir2 = Directory.current;
+    print(dir2.path);
+
+    File file2 = new File(dir2.path + '\\myFile.txt');
+    writeFile(file2);
+    readFile(file2);
+
+  //----------------------WRITING IN FILES
 }
+
+
+  void writeFile(File archivo){
+    //append, write
+
+    RandomAccessFile raf = archivo.openSync(mode:FileMode.append);
+    raf.writeStringSync('Hello world \r\n BLA BLA BLA');
+    raf.flushSync();
+    raf.closeSync();
+  }
+
+  void readFile(File archivo){
+    if (archivo.existsSync()){
+      print('Archivo no encontrado');
+      return;
+    } 
+
+    print('Leyendo String....');
+
+    archivo.readAsStringSync();
+    print('-----------------');
+
+    print('Leyendo bytes...');
+    archivo.readAsBytesSync();
+    List values = archivo.readAsBytesSync();
+    values.forEach((value) {
+      print(value);
+     });
+     archivo.delete();
+  }
